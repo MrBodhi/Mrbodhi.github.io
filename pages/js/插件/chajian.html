@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>菩提先生的插件</title>
+		<link rel="stylesheet" type="text/css" href="../../../css/base.css"/>
+			<link rel="stylesheet" href="../../../css/bootstrap.3.3.7.css.bootstrap.min.css.css">
+	<script src="../../../js/jquery-2.1.1.js"></script>
+	<script src="../../../js/bootstrap.3.3.7.js.bootstrap.min.js.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/chajian.css"/>
+	</head>
+	<body>
+		<!--标题-->
+		<div  style="width: 264px;margin: 0 auto;font-size: 50px;font-weight: 700;font-family: 宋体;"><img style="height: 60px;width: 60px;" src="../../../imgs/logo.png"/>一念菩提</div>
+
+		<ul id="myTab" class="nav nav-tabs">
+	<li class="active">
+        <a href="#weather" data-toggle="tab">天气插件</a>
+    </li>
+
+    <li><a href="#Date-time" data-toggle="tab">时间插件</a></li>
+     <li><a href="#ios" data-toggle="tab">敬请期待</a></li>
+    <li class="dropdown">
+        <a href="#" id="myTabDrop1" class="dropdown-toggle" 
+           data-toggle="dropdown">敬请期待 <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+            <li><a href="#jmeter" tabindex="-1" data-toggle="tab">
+                敬请期待</a>
+            </li>
+            <li><a href="#ejb" tabindex="-1" data-toggle="tab">
+                敬请期待</a>
+            </li>
+        </ul>
+    </li>
+</ul>
+<div id="myTabContent" class="tab-content">
+	<!--天气插件-->
+    <div class="tab-pane fade in active" id="weather">
+        <p>
+        	<iframe id="fancybox-frame" name="fancybox-frame1500254891475" frameborder="0" scrolling="no" hspace="0"  src="http://i.tianqi.com/index.php?c=code&a=getcode&id=34&h=25&w=280"></iframe>
+网址：http://www.tianqi.com/plugin/
+
+        </p>
+    </div>
+
+    <!--时间插件-->
+    <div class="tab-pane fade" id="Date-time">
+        <p>
+        	<div class="neirong"></div>
+	<script>
+	var nei=document.querySelector(".neirong")
+	var myDate = new Date();
+	
+	var y=myDate.getFullYear();
+	var m=myDate.getMonth()+1; 
+	var d=myDate.getDate(); 
+	var dy=myDate.getDay(); 
+	if(dy==0){
+		dy="日";
+	}else if(dy==1){
+		dy="一"
+	}else if(dy==2){
+		dy="二"
+	}else if(dy==3){
+		dy="三"
+	}else if(dy==4){
+		dy="四"
+	}else if(dy==5){
+		dy="五"
+	}else if(dy==6){
+		dy="六"
+	};
+	 nei.innerHTML=y+"-"+m+"-"+d+"星期（"+dy+"）";	
+	 
+	 
+//var s=myDate.toLocaleString(); 
+//nei.innerHTML=s;
+
+	</script>
+</p>
+    </div>
+    <div class="tab-pane fade" id="ios">
+        <p>123</p>
+    </div>
+    <div class="tab-pane fade" id="jmeter">
+        <p>敬请期待</p>
+    </div>
+    <div class="tab-pane fade" id="ejb">
+        <p>敬请期待
+        </p>
+    </div>
+</div>
+<script>
+    $(function () {
+        $('#myTab li:eq(1) a').tab('show');
+    });
+</script>
+	</body>
+</html>
