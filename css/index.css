@@ -9,3 +9,21 @@
 	height: 60px;
 	width: 60px;
 }
+.biaotiming {
+	height: 30px;
+	line-height: 30px;
+	font-size: 20px;
+	text-align: center;
+	font-weight: 700;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #000333;
+	background-color: #E3E3E3;
+}
+.biaotiming img {
+	width: 20px;
+	height: 20px;
+}
+.xiaobiaoti {
+	font-weight: 700;
+}
