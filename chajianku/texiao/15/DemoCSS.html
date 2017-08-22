@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
+    
+    img {
+      vertical-align: top;
+    }
+    
+    .main {
+      margin: 0 auto;
+      width: 1000px;
+      margin-top: 10px;
+    }
+    
+    .fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+	<a href="../../index.html">返回</a>
+<div class="top" id="topPart">
+  <img id="pic" src="images/top.png" alt=""/>
+</div>
+<div class="nav" id="navBar">
+  <img src="images/nav.png" alt=""/>
+</div>
+<div class="main" id="mainPart">
+  <img src="images/main.png" alt=""/>
+</div>
+<script>
+  var topP = document.getElementById("topPart");//获取高度
+  var navBar = document.getElementById("navBar");//获取高度
+  var mainPart = document.getElementById("mainPart");//主体部分
+  
+  window.onscroll = function () {
+    //检测页面被卷曲的高度
+    var pos = myScroll();
+    
+    //如果卷曲高度>topP的高，让navBar定住
+    if (pos.top > topP.offsetHeight) {
+      //设置类名
+      navBar.className = "fixed";
+      //脱标后，让mainPart设置marginTop，将失去的位置补上
+      mainPart.style.marginTop = navBar.offsetHeight + 10 + "px";
+    } else {
+      //取消类名
+      navBar.className = "";
+      mainPart.style.marginTop = 10 + "px";
+    }
+  };
+  
+  function myScroll() {
+    return {
+      top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,
+      left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0
+    };
+  }
+
+</script>
+</body>
+</html>

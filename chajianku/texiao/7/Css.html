@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    li {
+      list-style: none;
+    }
+    
+    body, html {
+      width: 100%;
+      height: 100%;
+    }
+    
+    div {
+      width: 100%;
+      height: 100%;
+    }
+    
+    ul {
+      width: 100%;
+      height: 100%;
+    }
+    
+    ul li {
+      width: 100%;
+      height: 100%;
+    }
+    
+    ol {
+      position: fixed;
+      top: 60px;
+      left: 60px;
+    }
+    
+    ol li {
+      width: 50px;
+      height: 50px;
+      border: 1px solid #000;
+      margin-top: -1px;
+      cursor: pointer;
+      text-align: center;
+      line-height: 50px;
+    }
+  </style>
+</head>
+<body>
+<a href="index.html">返回</a>
+<div id="box">
+  <!-- 背景的大方块-->
+  <ul>
+    <li>男装</li>
+    <li>女装</li>
+    <li>童装</li>
+    <li>老年装</li>
+    <li>妈咪装</li>
+  </ul>
+  <!-- 左侧的小按钮-->
+  <ol>
+    <li>男装</li>
+    <li>女装</li>
+    <li>童装</li>
+    <li>老年装</li>
+    <li>妈咪装</li>
+  </ol>
+</div>
+<script>
+  var color = ["pink", "blue", "green", "orange", "purple"];
+  
+  //1 获取元素
+  var box = document.getElementById("box");
+  var list = box.children[0];//背景的大盒子
+  var lisUl = list.children;
+  var ol = box.children[1];//操作的小按钮
+  var lisOl = ol.children;
+  var timer = null;
+  
+  //2 给ol和list中的每个盒子设置颜色
+  for (var i = 0; i < color.length; i++) {
+    lisUl[i].style.backgroundColor = color[i];
+    lisOl[i].style.backgroundColor = color[i];
+    
+    //设置索引值属性
+    lisOl[i].index = i;
+    
+    //3 遍历每个ol中的li添加事件
+    lisOl[i].onclick = function () {
+      //获取当前的目标位置
+      var target = lisUl[this.index].offsetTop;
+      
+      clearInterval(timer);//防止加速
+      timer = setInterval(function () {
+        var leader = myScroll().top;//当前位置卷曲的高度
+        //缓动公式
+        var step = (target - leader ) / 10;
+        step = step > 0 ? Math.ceil(step) : Math.floor(step);
+        leader = leader + step;
+        
+        window.scrollTo(0, leader);
+        
+        //清除定时器
+        if (leader == target) {
+          clearInterval(timer);
+        }
+        
+      }, 20);
+      
+    };
+    
+    
+  }
+  
+  function myScroll() {
+    return {
+      top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,
+      left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0
+    };
+  }
+
+</script>
+</body>
+</html>

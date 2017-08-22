@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		.box-guanggao {
+			margin-left: 400px;
+			background-color: hotpink;
+			width: 1200px;
+			height: 500px;
+			z-index: 1;
+		}		
+		.guanbii {
+			position: relative;
+			height: 20px;
+			width: 40px;
+			background-color: #fff;
+			margin-left: 1160px;
+		}
+		
+		.fixfix {
+			position:absolute;
+			top:300px;
+			z-index: 20;
+		}
+		.haha {
+			width: 0;
+			height: 0;
+		}
+		.tupian-size {
+			margin-top: -20px;
+			width: 1200px;
+			height: 500px;
+		}
+	</style>
+	<body>
+		
+		<div class="box-guanggao fixfix" id="box-guanggao">
+			<div class="guanbii" id="guanbii" >关闭</div>
+           <a href=""><img class="tupian-size" src="http://cms-bucket.nosdn.127.net/467f55adc84a4bffb94e646b602478d320170629140200.jpeg"></a>
+		</div>
+
+		<script>
+			var btop=document.querySelector( "#box-guanggao" );
+			var kaixin=document.querySelector(".box-guanggao")
+			var guanbi=document.querySelector( "#guanbii" );
+			
+				setTimeout(function(){
+					btop="1";
+				kaixin.style.display="none";	
+				
+			},6000);
+				
+			haha()
+			function haha(){
+			window.onscroll=function(){
+			var top=scroll().top;
+			if(-500<=top){
+				btop.className="box-guanggao fixfix "
+				btop.style.top=top+ 300 + "px";
+				btop.style.display="block";
+			}
+			}
+			}		
+			guanbi.onclick=function(){
+				
+				btop.style.display="none";
+			}
+
+			function scroll() {
+        return {
+            top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,
+            left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0
+        };
+    }
+			
+		</script>
+		
+	</body>
+</html>

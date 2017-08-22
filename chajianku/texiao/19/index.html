@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				float: left;
+			}
+			li {
+				margin:10px 20px;
+				margin: 0;
+				padding: 0;
+			}
+			li:hover {
+				background-color: greenyellow;
+			}
+			.box-shadow{  
+  				-webkit-box-shadow:0 0 10px #0CC;  
+	 			 -moz-box-shadow:0 0 10px #0CC;  
+	 			 box-shadow:0 0 10px #0CC; 
+  
+			}
+			.box {
+				color:#FFFFFF;
+				height: 20px;
+				overflow: hidden;
+				background-color: red;
+			}
+			.box:hover {
+				overflow: visible;
+			}
+			ul:hover {
+				background-color: white;
+				color:black;
+			}
+			.zhuang {
+				 transform-style: preserve-3d;
+				animation: move 3s normal;
+				 position: relative;
+				 -webkit-box-shadow:0 0 10px hotpink;  
+	 			 -moz-box-shadow:0 0 10px hotpink;  
+	 			 box-shadow:0 0 10px hotpink; 
+			}
+			#zhuan {
+				
+			}
+			@keyframes move{
+			0%{
+				transform: rotateX(0deg);
+			}
+			25%{
+				transform: rotateX(30deg);
+			}
+			50%{
+				transform: rotateX(0deg);
+			}
+			75%{
+				transform: rotateX(-30deg);
+			}
+			100%{
+				transform: rotateX(0deg);
+			}
+		}
+		</style>
+	</head>
+	<body>
+		
+		<a href="../../index.html">返回</a>
+		
+		<div class="box">
+		<ul>
+			<li>网站首页</li>
+			<div id="zhuan">
+			<li>关于我们</li>
+			<li>孵化基地</li>
+			<li>政策导航</li>
+			<li>资讯中心</li>
+			<li>服务平台</li>
+			<li>企业专栏</li>
+			<div>
+		</ul>
+		
+		</div>
+		
+		<script>	
+			(function(){
+				var zhuan=document.querySelector( "#zhuan" );
+				var list=document.querySelector( "ul" );
+				list.onmouseover=function(){
+					zhuan.classList.add("zhuang");
+					list.classList.add("box-shadow");
+				}
+				list.onmouseout=function(){
+					zhuan.classList.remove("zhuang");
+					list.classList.remove("box-shadow");
+				}
+				
+			})()
+		
+		
+		
+		</script>
+		
+		
+		
+		
+		
+		
+	</body>
+</html>

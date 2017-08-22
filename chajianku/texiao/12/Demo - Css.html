@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    ul {
+      list-style: none;
+    }
+    
+    img {
+      vertical-align: top;
+    }
+    
+    /*取消图片底部3像素距离*/
+    .box {
+      width: 300px;
+      height: 200px;
+      margin: 100px auto;
+      background-color: pink;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .box ul li {
+      float: left;
+    }
+    
+    .box ul {
+      width: 1500px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+	<a href="../../index.html">返回</a>
+<div class="box" id="screen">
+  <ul>
+    <li><img src="images/01.jpg" alt=""/></li>
+    <li><img src="images/02.jpg" alt=""/></li>
+    <li><img src="images/03.jpg" alt=""/></li>
+    <li><img src="images/04.jpg" alt=""/></li>
+    <!--放置了一个假的第一张，为了制作无缝滚动效果-->
+    <li><img src="images/01.jpg" alt=""/></li>
+  </ul>
+</div>
+<script>
+  //1 获取结构
+  var box = document.getElementById("screen");
+  var imgWid = box.offsetWidth;
+  var list = box.children[0];
+  
+  
+  //2 由于这个无缝滚动的效果是持续运动，所以不许要animate
+  var timer = null;
+  
+  timer = setInterval(function () {
+    var leader = list.offsetLeft;
+    var step = -10;
+    
+    //需要检测抽回的时机：当我的leader值等于了list.宽-图.宽，抽回
+    //如果leader的值比抽回位置的left更大，这时正常运动
+    if (leader > -(list.offsetWidth - imgWid)) {
+      leader = leader + step;
+      //将leader设置给list
+      list.style.left = leader + "px";
+    } else {
+      //修改前：抽回到0的位置
+      //修改后：我们发现，leader 的最小值执行时会和0的位置造成重合，就会有一次定时器代码执行，用户看起来图片没动(卡了一下)
+      //      我们可以在抽回的时候，帮助list先走一步的距离
+      list.style.left = step + "px";//你们写0就可以
+    }
+  }, 20);
+
+
+</script>
+</body>
+</html>

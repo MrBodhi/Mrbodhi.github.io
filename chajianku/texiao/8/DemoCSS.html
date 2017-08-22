@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    .box {
+      width: 322px;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      overflow: hidden;
+    }
+    
+    span {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 30px;
+      height: 20px;
+      cursor: pointer;
+    }
+    
+    #headPart {
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+<script src="animate.js"></script>
+<div class="box" id="box">
+  <span id="closeButton"></span>
+  
+  <div class="hd" id="headPart">
+    <img src="images/t.jpg" alt=""/>
+  </div>
+  <div class="bd" id="bottomPart">
+    <img src="images/b.jpg" alt=""/>
+  </div>
+</div>
+
+<script>
+  //    点击closeButton，先让底部的高变为0，第二步让整体的宽变为0
+  var box = document.getElementById("box");//大盒子
+  var closeButton = document.getElementById("closeButton");//关闭按钮
+  var headPart = document.getElementById("headPart");//上面的盒子
+  var bottomPart = document.getElementById("bottomPart");//底部盒子
+  
+  
+  closeButton.onclick = function () {
+    animate(bottomPart, {"height": 0}, function () {
+      //整体宽变成0
+      animate(box, {"width": 0}, function () {
+        //设置box移出
+        document.body.removeChild(box);
+      });
+    });
+  };
+  
+  
+  function animate(tag, obj, fn) {
+    clearInterval(tag.timer);
+    tag.timer = setInterval(function () {
+      var flag = true;
+      for (var k in obj) {
+        var target = obj[k];
+        var leader = parseInt(getStyle(tag, k)) || 0;
+        var step = (target - leader) / 10;
+        step = step > 0 ? Math.ceil(step) : Math.floor(step);
+        leader = leader + step;
+        tag.style[k] = leader + "px";
+        if (leader != target) {
+          flag = false;
+        }
+      }
+      if (flag) {
+        clearInterval(tag.timer);
+        //第一种写法 检测fn的类型(最严谨的方式)
+        if (typeof fn == "function") {
+          fn();
+        }
+        //第二种写法，利用短路操作
+        //小缺陷，如果你传入了参数，但是不是函数，会报错
+        //fn&&fn();//如果不按规则来，报错也活该
+      }
+      
+    }, 20);
+  }
+  function getStyle(tag, attr) {
+    if (tag.currentStyle) {
+      return tag.currentStyle[attr];
+    } else {
+      return getComputedStyle(tag, null)[attr];
+    }
+  }
+</script>
+</body>
+</html>

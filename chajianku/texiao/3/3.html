@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<style type="text/css">
+  body {
+    background: #ccc;
+  }
+  
+  label {
+    width: 40px;
+    display: inline-block;
+  }
+  
+  span {
+    color: red;
+  }
+  
+  .container {
+    margin: 100px auto;
+    width: 400px;
+    padding: 50px;
+    line-height: 40px;
+    border: 1px solid #999;
+    background: #efefef;
+  }
+  
+  span {
+    margin-left: 30px;
+    font-size: 12px;
+  }
+  
+  .wrong {
+    color: red
+  }
+  
+  .right {
+    color: green;
+  }
+  
+  .defau {
+    width: 200px;
+    height: 20px;
+  }
+  
+  .de1 {
+    background-position: 0 -20px;
+  }
+</style>
+<body>
+	<a href="index.html">返回</a>
+<div class="container">
+  <label>Q Q</label><input type="text" id="inp1"><span></span><br/>
+  <label>手机</label><input type="text" id="inp2"><span></span><br/>
+  <label>邮箱</label><input type="text" id="inp3"><span></span><br/>
+  <label>座机</label><input type="text" id="inp4"><span></span><br/>
+  <label>姓名</label><input type="text" id="inp5"><span></span><br/>
+</div>
+<script>
+  var ipt1 = document.getElementById("inp1");
+  var ipt2 = document.getElementById("inp2");
+  var ipt3 = document.getElementById("inp3");
+  var ipt4 = document.getElementById("inp4");
+  var ipt5 = document.getElementById("inp5");
+  
+  //验证qq  [1-9]\d{4,10};
+  yanZheng(ipt1, /^[1-9]\d{4,10}$/);
+  
+  //验证手机号  13|14|15|17|18   1[34578]\d{9}
+  yanZheng(ipt2, /^1[34578]\d{9}$/);
+  
+  //验证邮箱
+  //123abc_dAAA@qq.com  wuyo_u0@126.com
+  //可以包含的内容为字母数字下划线  可以用\w替代
+  yanZheng(ipt3, /^\w+@\w+(\.\w+){1,2}$/);
+  
+  // /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+  //  housaiyin-aobama@white-house.gov-baojie.com
+  
+  //验证座机
+  yanZheng(ipt4, /^\d{3,4}-\d{7,8}$/);
+  
+  //验证姓名
+  yanZheng(ipt5, /^[\u4e00-\u9fa5]{2,4}$/);
+  
+  function yanZheng(tag, reg) {
+    tag.onblur = function () {
+      if (reg.test(this.value)) {
+        this.nextSibling.innerHTML = "正确";
+      } else {
+        this.nextSibling.innerHTML = "有误";
+      }
+    };
+  }
+  
+  // --- 转义符在字符串中的使用
+  //var str = "小明跟小红说：\"今天天气不错！\"。";
+  //console.log(str);
+</script>
+</body>
+</html>

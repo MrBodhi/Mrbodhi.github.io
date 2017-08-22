@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		.box {
+			margin-left: 400px;
+			position: relative;
+		}
+		.box3 {
+			height: 200px;
+			width: 700px;
+			background-color: pink;
+			opacity: 0.3;
+		}
+		#box4 {
+			height: 600px;
+			width: 1000px;
+			top: 200px;
+			background: url(imgs/7.jpg) no-repeat;
+				}
+		#boxhaha {
+			height: 60px;
+			width: 600px;
+			line-height: 30px;
+			text-align: center;
+			background-color: pink;
+			position: absolute;
+
+		}
+		.fix {
+			position:absolute;
+			top:0px;
+			z-index: -1;
+		}
+	</style>
+	<body>
+		<a href="../../index.html">返回</a>
+		<div class="box">
+			<div id="boxhaha">
+				<p>网易河南</p>
+			</div>
+			<div class="box1">
+				<img src="imgs/4.jpg" alt="" />
+			</div>
+			<div class="box2">
+				<img src="imgs/2.jpg" alt="" />
+			</div>
+			<div class="box3"></div>
+			<div id="box4">
+				<img src="imgs/7.jpg" alt="" />
+				<img src="imgs/5.jpg"/>
+			</div>
+			<div class="box5">
+				<img src="imgs/3.jpg" alt="" />
+			</div>
+			<div class="box5">
+				<img src="imgs/3.jpg" alt="" />
+			</div>
+			
+			
+		</div>
+		
+		<script>
+			var btop=document.querySelector( "#box4" );
+			
+			window.onscroll=function(){
+				var top=scroll().top;
+			console.log(top)
+//			btop.onclick = function(){
+//				alert("网易河南")
+//			}
+
+			if(500<top){
+				btop.className=" fix "
+				btop.style.top=top + "px";
+				btop.style.display="block";
+			}
+			console.log(top);
+			if (top>1950){
+				btop.style.display="none";
+			}
+			
+//			
+			
+			}
+			
+			
+			function scroll() {
+        return {
+            top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,
+            left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0
+        };
+    }
+			
+		</script>
+		
+	</body>
+</html>
