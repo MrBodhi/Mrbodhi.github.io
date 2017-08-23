@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>   
-</head>
-<body>
-
-<div  id="box_xiaoshi">
-    <span id="closeButton">x</span>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div  id="box_xiaoshi">
+    <span id="closeButton">关闭</span>
 
     <div  id="headPart">
-        <img src="images/t.jpg" alt=""/>
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1503488437450&di=028bb31f3c9b76b95e61d3d1f0d1e5dc&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201510%2F21%2F20151021224655_zMjXV.jpeg" alt=""/>
     </div>
 
 </div>
-<style>
+		<style>
 
         #box_xiaoshi {
         	margin: 0;
@@ -40,11 +39,15 @@
             top: 0;
             right: 0px; 
             color: #FFFFFF;
-            font-size: 20px;
-            width: 30px;
+            font-size: 16px;
+            width: 32px;
             height: 20px;
             cursor: pointer;
+            background-color: #000;
         }
+        #closeButton:hover {
+        	color: orangered;
+        }    
     </style>
 <script>
     var box_xiaoshi = document.getElementById("box_xiaoshi");
@@ -54,5 +57,5 @@
         box_xiaoshi.innerHTML="";
     };
 </script>
-</body>
+	</body>
 </html>
