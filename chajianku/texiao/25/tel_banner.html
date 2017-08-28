@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+	* {
+		padding: 0;
+		margin: 0;
+	}
+		.banner{
+			width: 200px;
+			height: 20px;
+			overflow: hidden;
+		}
+		.banner ul {
+			list-style: none;
+			width: 500%;
+			animation: moves 20s infinite ;
+			
+		}
+		.banner ul li {
+			/*float: left;*/
+			width: 200px;
+			height: 20px;
+			background-color: #C2C2C2;
+		}
+		@keyframes moves{
+			0% {
+				transform: translateY(0px);
+			}
+			25% {
+				transform: translateY(-20px);
+			}
+			50% {
+				transform: translateY(-40px);
+			}
+			75% {
+				transform: translateY(-60px);
+			}
+			100% {
+				transform: translateY(-80px);
+			}
+		}
+	</style>
+</head>
+<body>
+<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+	<form action="" method="post">
+		姓名：<input type="text" name="name" id="name" value="请输入姓名" />
+		手机号:
+		<div id="app-6">
+ 
+  <input type="text" name="tel" id="tel" v-model="message" />
+		<input type="submit" value="提交"/>
+	</form>
+	
+	<div class="banner">
+		<ul>
+			<li>{{ message }}</li>
+			<li>132****5376</li>
+			<li>132****5376</li>
+			<li>132****5376</li>
+			<li>132****5376</li>
+		</ul>
+	</div>
+</div>	
+	<script>
+		var app6 = new Vue({
+  el: '#app-6',
+  data: {
+    message: '请输入手机号'
+  }
+})
+
+	</script>
+	
+</body>
+</html>
