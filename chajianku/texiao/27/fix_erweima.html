@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+
+</head>
+<body>
+	<!--二维码css部分-->
+  <style>  
+    .fixedd {
+      position: fixed;
+      top: 45%;
+      right: 0;
+    }
+    .erweimachanshu {
+    	font-size: 13px;
+    }
+  </style>
+<!--二维码html部分-->
+<div class="fixedd" id="navBar">
+  <img style="width: 100px;height: 100px;vertical-align: top;" src="http://cms-bucket.nosdn.127.net/a39ffab96b5e496a869e4522ed353c8120170828155359.jpeg" alt=""/>
+  <div class="erweimachanshu">河南产业合作APP</div>
+</div>
+<div class="neirong">
+	<img src="http://127.0.0.1:8020/mrbodhi.github.io/mrbodhi.github.io/chajianku/texiao/15/images/main.png" alt="" />
+</div>
+<!--二维码js部分-->
+<script> 
+  var navBar = document.getElementById("navBar");//获取高度  
+  window.onscroll = function () {
+    //检测页面被卷曲的高度
+    var pos = myScroll();
+    
+    //如果卷曲高度>topP的高，让navBar定住
+    if (pos.top > -100) {
+      //设置类名
+      navBar.className = "fixedd";
+    }
+  }; 
+  function myScroll() {
+    return {
+      top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,
+      left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0
+    };
+  }
+</script>
+
+
+
+
+</body>
+</html>
