@@ -1,6 +1,5 @@
 
-<!-- saved from url=(0046)http://news.163.com/special/taidu2017news_api/ -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK"></head><body>callback({
+callback({
 	"data": [
 				 			{
 				"title": "\u76DB\u5178\u6253\u0063\u0061\u006C\u006C\u6A21\u5F0F\u5F00\u542F\u0020\u8D75\u4E3D\u9896\u6768\u5E42\u8C01\u6700\u201C\u6709\u620F\u201D\uFF1F\u0020",
@@ -123,4 +122,4 @@
 				"url": "http://dy.163.com/v2/article/detail/D3305T4L05178480.html"
 			}
 			]
-});</body></html>
+});
