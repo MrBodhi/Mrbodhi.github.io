@@ -4,9 +4,9 @@
 		<meta charset="UTF-8">
 		<title></title>
 	</head>
-	<style>
+<style>
 		.box-guanggao {
-			margin-left: 400px;
+			margin-left: -600px;
 			background-color: hotpink;
 			width: 1200px;
 			height: 500px;
@@ -22,8 +22,9 @@
 		
 		.fixfix {
 			position:absolute;
-			top:300px;
+			left: 50%;
 			z-index: 20;
+          top:150px;
 		}
 		.haha {
 			width: 0;
@@ -37,12 +38,15 @@
 	</style>
 	<body>
 		
+
 		<div class="box-guanggao fixfix" id="box-guanggao">
 			<div class="guanbii" id="guanbii" >关闭</div>
-           <a href=""><img class="tupian-size" src="http://cms-bucket.nosdn.127.net/467f55adc84a4bffb94e646b602478d320170629140200.jpeg"></a>
+           <a href="http://henan.163.com/17/1109/09/D2PPK4BL04398NCD.html"><img class="tupian-size" src="http://cms-bucket.nosdn.127.net/e333686e9a234d5bb611c2736da77bc220171111094254.jpeg"></a>
 		</div>
-
-		<script>
+		
+		
+		
+<script>
 			var btop=document.querySelector( "#box-guanggao" );
 			var kaixin=document.querySelector(".box-guanggao")
 			var guanbi=document.querySelector( "#guanbii" );
@@ -59,7 +63,7 @@
 			var top=scroll().top;
 			if(-500<=top){
 				btop.className="box-guanggao fixfix "
-				btop.style.top=top+ 300 + "px";
+				btop.style.top=top +150+ "px";
 				btop.style.display="block";
 			}
 			}
@@ -68,7 +72,6 @@
 				
 				btop.style.display="none";
 			}
-
 			function scroll() {
         return {
             top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,
@@ -76,7 +79,7 @@
         };
     }
 			
-		</script>
+</script>
 		
 	</body>
 </html>
