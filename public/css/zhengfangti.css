@@ -1,0 +1,72 @@
+ /*.cube_zheng {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            transform-style: preserve-3d;
+            animation: zhengmove 12s infinite ;
+            position: relative;
+        }
+        
+        .cube_zheng span {
+            display: block;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            opacity: 0.4;
+        }
+       .cube_zheng img {
+        	width: 200px;
+        	height: 200px;
+        }
+        
+       .cube_zheng .cube_zhengfront {
+            background-color: red;
+            transform: translateZ(100px);
+        }
+        
+       .cube_zheng .cube_zhengback {
+            background-color: yellow;
+            transform: translateZ(-100px);
+        }
+        
+        .cube_zheng .cube_zhengleft {
+            background-color: gray;
+            transform: rotateY(90deg) translateZ(-100px);
+        }
+        
+        .cube_zheng .cube_zhengright {
+            background-color: pink;
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        
+        .cube_zheng .cube_zhengtop {
+            background-color: blue;
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        
+        .cube_zheng .cube_zhengbottom {
+            background-color: green;
+            transform: rotateX(90deg) translateZ(-100px);
+        }
+        @keyframes zhengmove {
+            0%{
+                transform: rotateX(10deg) rotateY(0deg);
+            }
+            25%{
+                transform: rotateX(90deg) rotateY(90deg);
+            }
+            50%{
+                transform: rotateX(180deg) rotateY(180deg);
+            }
+            75%{
+                transform: rotateX(270deg) rotateY(270deg);
+            }
+            100%{
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+        .cube_zheng .cube_zhengfront,.cube_zhengback,.cube_zhengleft,.cube_zhengright {
+            font-size: 40px;
+            text-align: center;
+            line-height: 200px;
+        }*/
