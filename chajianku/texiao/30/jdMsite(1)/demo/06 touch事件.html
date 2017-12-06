@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0" />
+    <title>触屏事件</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+    <script>
+        /*
+        * 1.了解touch事件
+        *
+        * touchstart  触摸到屏幕的是时候触发
+        * touchmove   在屏幕来回的滑动时候触发
+        * touchend    离开屏幕的时候触发
+        * touchcancel 被迫终止滑动的时候触发 （不常用  比如来电话）
+        *
+        * */
+
+        /*
+        * 2.绑定事件
+        * */
+        var div = document.querySelector('div');
+
+        div.addEventListener('touchstart',function(e){
+            console.log('touchstart');
+            console.log(e.touches[0]);
+        });
+        div.addEventListener('touchmove',function(e){
+            console.log('touchmove');
+            console.log(e);
+        });
+        div.addEventListener('touchend',function(e){
+            console.log('touchend');
+            console.log(e);
+        });
+
+        /*
+        * 3.touch事件的事件对象
+        *   都是触摸点集合
+        * changedTouches  当前屏幕上面所有改变过的触摸点
+        * targetTouches   当前元素上面的触摸点
+        * touches         当前屏幕上的所有的触摸点
+        * */
+
+        /*
+        * 4.触摸点包含了什么信息 坐标信息
+        *   client   视口的坐标
+        *   page     页面的坐标
+        *   screen   屏幕的坐标
+        * */
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0" />
+    <title>触屏事件</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div>
+
+</div>
+<script src="../js/common.js"></script>
+<script>
+    var div = document.querySelector('div');
+
+    /*click在移动端的响应速度是300ms左右*/
+    /*div.addEventListener('click',function(e){
+        console.log('click');
+    });
+
+    div.addEventListener('touchstart',function(e){
+        console.log('touchstart');
+    });
+    div.addEventListener('touchmove',function(e){
+        console.log('touchmove');
+    });
+    div.addEventListener('touchend',function(e){
+        console.log('touchend');
+    });*/
+
+    /*在移动端为了解决移动端click响应延时问题  tap的事件*/
+    /*tap是移动端一些框架或这库 封装得来的  响应速度快*/
+    /*tap 封装原理*/
+
+    tap(div,function(e){
+        console.log('你执行了tap');
+    })
+
+    /*另外的解决方案  使用插件 fastclick */
+</script>
+</body>
+</html>
