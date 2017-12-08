@@ -52,6 +52,105 @@ body {
 	background-size:100%;
 	 background-repeat: no-repeatrepeat;;
 }
+
+/*旋转的正方体*/
+.cube {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            transform-style: preserve-3d;
+            animation: move 12s infinite ;
+            position: fixed;
+            left: 50%;
+            margin-right: 100px;       
+        }
+        
+        .cube span {
+            display: block;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            opacity: 0.4;
+        }
+        img {
+        	width: 200px;
+        	height: 200px;
+        }
+        
+        .front {
+            background-color: red;
+            transform: translateZ(100px);
+        }
+        
+        .back {
+            background-color: yellow;
+            transform: translateZ(-100px);
+        }
+        
+        .left {
+            background-color: gray;
+            transform: rotateY(90deg) translateZ(-100px);
+        }
+        
+        .right {
+            background-color: pink;
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        
+        .top {
+            background-color: blue;
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        
+        .bottom {
+            background-color: green;
+            transform: rotateX(90deg) translateZ(-100px);
+        }
+        @keyframes move {
+            0%{
+                transform: rotateX(10deg) rotateY(0deg);
+            }
+            25%{
+                transform: rotateX(90deg) rotateY(90deg);
+            }
+            50%{
+                transform: rotateX(180deg) rotateY(180deg);
+            }
+            75%{
+                transform: rotateX(270deg) rotateY(270deg);
+            }
+            100%{
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+        .front,.back,.left,.right {
+            font-size: 40px;
+            text-align: center;
+            line-height: 200px;
+        }
+
+/*第二个*/
+		.two_box{
+			bottom: 20px;
+		}
+
+
+/*第三个*/
+
+		.three_box{
+			left: 20px;
+			margin-left: 25%;
+		}
+
+/*第四个*/
+
+		.fore_box{
+			left: 20px;
+			bottom: 20px;
+			margin-left: 25%;
+		}
+
+
 </style>
 
 <script type="text/javascript" src="js/ge1doot.js"></script>
@@ -411,5 +510,86 @@ body {
 	var sd=document.querySelector('')
 </script>
 
+<!--旋转的正方体-->
+ <div class="cube">
+        <span class="front">
+        	<img src="imgs/1.jpg" alt="" />
+        </span>
+        <span class="back">
+        	<img src="imgs/2.jpg" alt="" />
+        </span>
+        <span class="left">
+        	<img src="imgs/3.jpg" alt="" />
+        </span>
+        <span class="right">
+        	<img src="imgs/4.jpg" alt="" />
+        </span>
+        <span class="top">
+        	<img src="imgs/5.jpg" alt="" />
+        </span>
+        <span class="bottom">
+        	<img src="imgs/6.jpg" alt="" />
+        </span>
+    </div>
+    <div class="cube two_box">
+        <span class="front">
+        	<img src="imgs/1.jpg" alt="" />
+        </span>
+        <span class="back">
+        	<img src="imgs/2.jpg" alt="" />
+        </span>
+        <span class="left">
+        	<img src="imgs/3.jpg" alt="" />
+        </span>
+        <span class="right">
+        	<img src="imgs/4.jpg" alt="" />
+        </span>
+        <span class="top">
+        	<img src="imgs/5.jpg" alt="" />
+        </span>
+        <span class="bottom">
+        	<img src="imgs/6.jpg" alt="" />
+        </span>
+    </div>
+    <div class="cube three_box">
+        <span class="front">
+        	<img src="imgs/1.jpg" alt="" />
+        </span>
+        <span class="back">
+        	<img src="imgs/2.jpg" alt="" />
+        </span>
+        <span class="left">
+        	<img src="imgs/3.jpg" alt="" />
+        </span>
+        <span class="right">
+        	<img src="imgs/4.jpg" alt="" />
+        </span>
+        <span class="top">
+        	<img src="imgs/5.jpg" alt="" />
+        </span>
+        <span class="bottom">
+        	<img src="imgs/6.jpg" alt="" />
+        </span>
+    </div>
+    <div class="cube fore_box">
+        <span class="front">
+        	<img src="imgs/1.jpg" alt="" />
+        </span>
+        <span class="back">
+        	<img src="imgs/2.jpg" alt="" />
+        </span>
+        <span class="left">
+        	<img src="imgs/3.jpg" alt="" />
+        </span>
+        <span class="right">
+        	<img src="imgs/4.jpg" alt="" />
+        </span>
+        <span class="top">
+        	<img src="imgs/5.jpg" alt="" />
+        </span>
+        <span class="bottom">
+        	<img src="imgs/6.jpg" alt="" />
+        </span>
+    </div>
 </body>
 </html>
