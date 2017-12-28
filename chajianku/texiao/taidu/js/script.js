@@ -27,10 +27,10 @@ $(function()
 			{
 				$(this.el).html
 				(
-					"<div class=\"countdown-box\"><h2 class=\"countdown-number\">" + data.days + "</h2>" + " <h4 class=\"countdown-title\">ÃÏ</h4></div>" +
-					"<div class=\"countdown-box\"><h2 class=\"countdown-number\">" + data.hours + "</h2>" + " <h4 class=\"countdown-title\">–° ±</h4></div>" +
-					"<div class=\"countdown-box\"><h2 class=\"countdown-number\">" + this.leadingZeros(data.min, 2) + "</h2>" + " <h4 class=\"countdown-title\">∑÷</h4></div>" +
-					"<div class=\"countdown-box\"><h2 class=\"countdown-number\">" + this.leadingZeros(data.sec, 2) + "</h2>" + " <h4 class=\"countdown-title\">√Î</h4></div>"
+					"<div class=\"countdown-box\"><h2 class=\"countdown-number\">" + data.days + "</h2>" + " <h4 class=\"countdown-title\">Â§©</h4></div>" +
+					"<div class=\"countdown-box\"><h2 class=\"countdown-number\">" + data.hours + "</h2>" + " <h4 class=\"countdown-title\">Â∞èÊó∂</h4></div>" +
+					"<div class=\"countdown-box\"><h2 class=\"countdown-number\">" + this.leadingZeros(data.min, 2) + "</h2>" + " <h4 class=\"countdown-title\">ÂàÜ</h4></div>" +
+					"<div class=\"countdown-box\"><h2 class=\"countdown-number\">" + this.leadingZeros(data.sec, 2) + "</h2>" + " <h4 class=\"countdown-title\">Áßí</h4></div>"
 				);
 			}
 		});
