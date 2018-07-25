@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>解决tab表格超出部分出现三个点并隐藏</title>
+	</head>
+	<body>
+		<p>
+			样式设置为
+		</p>
+		<p>
+				table {
+			
+		</p>
+		<p>
+			table-layout: fixed;
+			
+		</p>
+		<p>
+			width: 100%;}
+			
+		</p>
+		<p>
+		td {
+			
+		</p>
+		<p>
+		      white-space: nowrap;
+			
+		</p>
+			  overflow: hidden;
+		<p>
+		      text-overflow: ellipsis;}
+			
+		</p>
+		<p>注释：</p>
+		<p>table{</p>
+		<p>table-layout: fixed;  ==>固定布局的算法。在这种算法中，表格和列的宽度取决于col对象的宽度总和，假如没有指定，则会取决于第一行每个单元格的宽度。</p>
+		<p> 假如表格没有指定宽度( width )属性，则表格被呈递的默认宽度为 100% （注意：此样式是关键）</p>
+		<p> td{</p>
+		<p>white-space: nowrap;      ==>设置内容抵达容器边界会不会转到下一行</p>
+		<p>overflow: hidden;         ==>不显示超过对象尺寸的内容（这个绝对不能少）,也就是说设置td里面的数据无论有多少，都不会换行</p>
+		<p>text-overflow: ellipsis;  ==>将被隐藏的那部分用省略号代替。</p>
+		<p>}</p>
+		
+
+	</body>
+</html>
