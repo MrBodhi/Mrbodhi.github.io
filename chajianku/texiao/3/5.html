@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>正则</title>
+  <script src="jquery-1.11.0.js"></script>
+</head> 
+<style type="text/css">
+  body {
+    background: #ccc;
+  }
+  
+  label {
+    width: 100%;
+    display: inline-block;
+  }
+  
+  span {
+    color: red;
+  }
+  
+  .container {
+    margin: 100px auto;
+    width: 400px;
+    padding: 50px;
+    line-height: 40px;
+    border: 1px solid #999;
+    background: #efefef;
+  }
+  
+  span {
+    margin-left: 30px;
+    font-size: 12px;
+  }
+  
+  .wrong {
+    color: red
+  }
+  
+  .right {
+    color: green;
+  }
+  
+  .defau {
+    width: 200px;
+    height: 20px;
+  }
+  
+  .de1 {
+    background-position: 0 -20px;
+  }
+</style>
+<body>
+	<a href="index.html">返回</a>
+<div class="container">
+  <label>验证0.05-9最多保留两位小数</label><input type="text" id="inp1"><span></span><br/>
+
+</div>
+<script>
+  var ipt1 = document.getElementById("inp1");
+// 先正则验证最多保留两位小数
+  yanZheng(ipt1, /^([0-9][0-9]*)+(.[0-9]{1,2})?$/);
+  
+  function yanZheng(tag, reg) {
+    tag.onblur = function () {
+   
+      if (reg.test(this.value)) {
+//    	获取值
+      		var intval=$(this).val()
+//    		判断值的大小
+      	if(0.05<=intval<=9){
+      		this.nextSibling.innerHTML = "正确";
+      	}else{
+      		this.nextSibling.innerHTML = "有误";
+      	}
+      } else {
+        this.nextSibling.innerHTML = "有误";
+      }
+    };
+  }
+  
+
+</script>
+</body>
+</html>
