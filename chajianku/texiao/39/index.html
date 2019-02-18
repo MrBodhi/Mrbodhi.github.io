@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>禁右键和F12</title>
+		<script>
+			function click(e) {
+                if (document.all) {
+                    if (event.button==2||event.button==3) {
+                        oncontextmenu='return false';
+                    }
+                }
+                if (document.layers) {
+                    if (e.which == 3) {
+                        oncontextmenu='return false';
+                    }
+                }
+            }
+             
+            if (document.layers) {
+                document.captureEvents(Event.MOUSEDOWN);
+            }
+            document.onmousedown=click;
+            document.oncontextmenu = new Function("return false;")
+ 
+            document.onkeydown =document.onkeyup = document.onkeypress=function(){
+                if(window.event.keyCode == 123) {
+                    window.event.returnValue=false;
+                    return(false);
+                }
+            }
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			今天天气不错
+		</div>
+	</body>
+</html>
