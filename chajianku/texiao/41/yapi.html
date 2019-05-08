@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>测试yapi接口</title>
+		<script src="jquery-2.1.1.min.js"></script>
+		<style>
+			#box {
+				width: 100px;
+				height: 100px;
+				background-color: deeppink;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+
+		</div>
+
+		<script>
+			$(function() {
+				$('#box').click(function() {
+					$.ajax({
+						type: "post",
+						dataType: 'json',
+						data: {},
+						url: "http://yapi.demo.qunar.com/mock/63554/mrbodhibox/useredesd",
+						async: false,
+						success: function(data) {
+							var data=JSON.stringify(data);
+								data=JSON.parse(data);
+							console.log(data.data.id);
+						},
+						error: function(data) {
+							
+						}
+					});
+				})
+			})
+		</script>
+
+	</body>
+
+</html>
