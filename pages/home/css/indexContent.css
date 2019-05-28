@@ -1,0 +1,58 @@
+.immortal {
+	width: 90%;
+	float: left;
+	position: relative;
+	top: -10000px;
+}
+/*几个图片的动画开始*/
+.immortaloneImgone {animation: activeTop 5s 0.5s 1 normal forwards;}
+.immortaloneImgtwo {animation: activeLower 5s 5s 1 normal forwards;}
+.immortaloneImgthree { position: relative;top: 0px;opacity: 0; animation: activeRotateX 5s 10s 1 normal forwards;}
+.immortaloneImgfore{ position: relative;top: 0px;opacity: 0; animation: activeRotateY 5s 15s 1 normal forwards;}
+.KinglsImgone{ position: relative;top: 0px;opacity: 0; animation: activeKingOne 12s 0s 1 normal forwards;}
+.immortaloneImgfive{ position: relative;top: 0px;opacity: 0; animation: activeRotateZ 5s 22s 1 normal forwards;}
+.immortaloneImgSix{ position: relative;top: 0px;opacity: 0; animation: activeRotateY 5s 27s 1 normal forwards;}
+/*几个图片的动画结束*/
+/*背景图切换开始*/
+#bigbox {
+	padding-left: 5%;
+	text-align: center;
+}
+/*主页背景切换动画设置*/
+#indexMain {
+	animation:indexBackground 16s;
+    animation-iteration-count:infinite;
+    animation-direction:alternate;
+    animation-timing-function: ease-in-out;
+    height: 100vh;
+    width: 100%;
+}
+/*背景图切换结束*/
+
+.immortalzxc {
+	float: right;
+	margin-right: 5%;
+	top: 30px;
+}
+
+.kingmsf {
+	padding-top: 10%;
+	text-align: center;
+}
+
+.kingmsf img {
+	width: 50%;
+	border-radius: 50%;
+	top: -1000px;
+    right: -100px;
+}
+
+html,
+body,
+#indexMain,
+#bigbox {
+	height: 100%;
+}
+
+
+

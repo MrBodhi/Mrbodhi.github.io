@@ -1,29 +1,27 @@
-.biaoti {
-	width: 264px;
-	margin: 0 auto;
-	font-size: 50px;
-	font-weight: 700;
-	font-family: 宋体;
+/*导航*/
+.indexNav {
+	display: none;
 }
-.biaoti img {
-	height: 60px;
-	width: 60px;
+.indexNav .layui-nav * {
+	font-size: 1.4rem;
+	text-shadow: 3px 3px 3px red;
 }
-.biaotiming {
-	height: 30px;
-	line-height: 30px;
-	font-size: 20px;
-	text-align: center;
-	font-weight: 700;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	border: 1px solid #000333;
-	background-color: #E3E3E3;
+.layui-nav-child {
+	    background-color: #393D49;
 }
-.biaotiming img {
-	width: 20px;
-	height: 20px;
+.layui-nav .layui-nav-child a {
+	color: #fff;
 }
-.xiaobiaoti {
-	font-weight: 700;
-}
+/*主体*/
+
+.indexMain {}
+
+
+/*底部*/
+
+.indexFloor {}
+
+
+/*首页导航栏动画显示开始*/
+.indexNavActive{ position: relative;z-index: 999; display:block;top: -200px;opacity: 0; animation: indexNavActive 5s 1s 1 normal forwards;}
+/*首页导航栏动画显示结束*/

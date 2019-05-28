@@ -1,0 +1,141 @@
+/*首页动画开始*/
+
+
+/*往上的动画*/
+
+@keyframes activeTop {
+	from {
+		top: 600px;
+	}
+	to {
+		top: 0px;
+	}
+}
+
+
+/*往下的动画*/
+
+@keyframes activeLower {
+	from {
+		top: -600px;
+	}
+	to {
+		top: 0px;
+	}
+}
+
+
+/*透明渐变的动画翻转X动画*/
+
+@keyframes activeRotateX {
+	from {
+		opacity: 0;
+		transform: rotateX(360deg);
+	}
+	to {
+		opacity: 1;
+		transform: rotateX(0deg);
+	}
+}
+
+
+/*透明渐变的动画翻转Y动画*/
+
+@keyframes activeRotateY {
+	from {
+		transform: rotateY(360deg);
+		opacity: 0;
+	}
+	to {
+		transform: rotateY(0deg);
+		opacity: 1;
+	}
+}
+
+
+/*透明渐变的动画翻转Z动画*/
+
+@keyframes activeRotateZ {
+	from {
+		transform: rotateZ(360deg);
+		opacity: 0;
+	}
+	to {
+		transform: rotateZ(0deg);
+		opacity: 1;
+	}
+}
+
+
+/*人物出场*/
+
+@keyframes activeKingOne {
+	0% {
+		top: -700px;
+		right: -100px;
+		width: 0%;
+		transform: rotateX(360deg) rotateZ(360deg) rotateY(360deg);
+		opacity: 0;
+	}
+	100% {
+		top: 0px;
+		right: 0px;
+		width: 50%;
+		opacity: 1;
+		transform: rotateX(-7deg) rotateZ(1deg) rotateY(5deg);
+	}
+}
+
+/*主页切换背景图片*/
+@-webkit-keyframes indexBackground
+{
+  0% {
+		background: url(../images/indexbackgPhoto.jpg) no-repeat center;
+    background-size: cover;
+	}
+	33% {
+		background: url(../images/indexbackground1.jpg) no-repeat center;
+    background-size: cover;
+	}
+	66% {
+		background: url(../images/indexbackground2.jpg) no-repeat center;
+    background-size: cover;
+	}
+	100% {
+		background: url(../images/indexbackground3.jpg) no-repeat center;
+    background-size: cover;
+	}
+}
+@keyframes indexBackground
+{
+   	0% {
+		background: url(../../pages/home/images/indexbackgPhoto.jpg) no-repeat center;
+    background-size: cover;
+	}
+	33% {
+		background: url(../../pages/home/images/indexbackground1.jpg) no-repeat center;
+    background-size: cover;
+	}
+	66% {
+		background: url(../../pages/home/images/indexbackground2.jpg) no-repeat center;
+    background-size: cover;
+	}
+	100% {
+		background: url(../../pages/home/images/indexbackground3.jpg) no-repeat center;
+    background-size: cover;
+	}
+}
+
+/*首页导航动画*/
+@keyframes indexNavActive {
+	from {
+		opacity: 0;
+		top: -200px;
+	}
+	to {
+			opacity: 1;
+			top:0;
+	}
+}
+
+/*首页动画结束*/
