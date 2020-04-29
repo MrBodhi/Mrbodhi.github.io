@@ -1,83 +1,13 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html>
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=640,user-scalable=no, target-densitydpi=device-dpi">
-		<script>
-			if(/Android (\d+\.\d+)/.test(navigator.userAgent)) {
-
-				if(parseFloat(RegExp.$1) > 2.3) {
-					var phoneScale = parseInt(window.screen.width) / 640;
-					document.write('');
-				} else {
-					document.write('');
-				}
-			} else {
-				document.write('');
-			}
-		</script>
-		<title>Mrbodhi</title>
-		<link rel="shortcut icon" href="images/favicon.ico" />
-		<link rel="bookmark"href="images/favicon.ico" />
-		<script src="js/index.js"></script>
-	</head>
-
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<title>webpackindex</title>
+	<link rel="shortcut icon" href="favicon.ico"></head>
 	<body>
-		<!--导航-->
-		<div id="indexNav" class="indexNav">
-			<ul class="layui-nav" lay-filter="">
-				<li class="layui-nav-item layui-this textShow" id="indexHome" @click=oneClk()>
-					<a href="javascript:;">{{one}}</a>
-				</li>
-				<li class="layui-nav-item">
-					<a href="javascript:;">{{two}}</a>
-					<dl class="layui-nav-child">
-						<!-- 二级菜单 -->
-						<dd @click=twooneClk()>
-							<a href="javascript:;">{{twoOne}}</a>
-						</dd>
-						<dd @click=twotwoClk()>
-							<a href="javascript:;">{{twoTwo}}</a>
-						</dd>
-						<dd @click=twothreeClk()>
-							<a href="javascript:;">{{twoThree}}</a>
-						</dd>
-						<dd @click=twofourClk()>
-							<a href="javascript:;">{{twoFore}}</a>
-						</dd>
-					</dl>
-				</li>
-				<li class="layui-nav-item textShow" @click=ThtreeClk()>
-					<a href="javascript:;">{{three}}</a>
-				</li>
-				<li class="layui-nav-item">
-					<a href="javascript:;">{{four}}</a>
-					<dl class="layui-nav-child">
-						<!-- 二级菜单 -->
-						<dd @click=fiveClk()>
-							<a href="javascript:;">{{five}}</a>
-						</dd>
-						<dd @click=sixClk()>
-							<a href="javascript:;">{{six}}</a>
-						</dd>
-					</dl>
-				</li>
-				<li class="layui-nav-item" @click=sevenClk()>
-					<a href="javascript:;">{{seven}}</a>
-				</li>
-			</ul>
-		</div>
-		<!--主题内容-->
-		<div id="indexMain" class="indexMain">
+		<div id="app">
 			
 		</div>
-		<!--底部-->
-		<div id="indexFloor" class="indexFloor">
-			
-		</div>
-		<script src="js/indexLay.js"></script>
-		<script src="js/indexVue.js"></script>
-	</body>
-
+	<script src="main.js"></script></body>
 </html>
